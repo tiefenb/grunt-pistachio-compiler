@@ -1,0 +1,40 @@
+{
+  "name": "grunt-pistachio-compiler",
+  "version": "0.0.1",
+  "description": "Grunt task to compile pistachio templates",
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "pistachio",
+    "tempaltes",
+    "compiler"
+  ],
+  "homepage": "https://github.com/tiefenb/grunt-pistachio-compiler",
+  "bugs": "https://github.com/sindresorhus/grunt-pistachio-compiler/issues",
+  "author": {
+    "name": "Markus Tiefenbacher",
+    "email": "markus@tiefenb.com",
+    "url": "http://tiefenb.com"
+  },
+  "main": "grunt.js",
+  "bin": {
+    "pistachio": "node_modules/pistachio/compile.js",
+    "grunt-pistachio-compiler": "bin/grunt-pistachio-compiler"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tiefenb/grunt-pistachio-compiler.git"
+  },
+  "dependencies": {
+    "pistachio": ">=0.1.7"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.15"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": {
+    "type": "MIT"
+  }
+}
