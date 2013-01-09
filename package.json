@@ -1,6 +1,6 @@
 {
   "name": "grunt-pistachio-compiler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Grunt task to compile pistachio templates",
   "keywords": [
     "gruntplugin",
@@ -29,7 +29,7 @@
     "pistachio": ">=0.1.7"
   },
   "devDependencies": {
-    "grunt": "~0.3.15"
+    "grunt": "~0.4.0"
   },
   "engines": {
     "node": ">=0.8.0"
