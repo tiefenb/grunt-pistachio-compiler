@@ -1,6 +1,6 @@
 {
   "name": "grunt-pistachio-compiler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Grunt task to compile pistachio templates",
   "keywords": [
     "gruntplugin",
@@ -26,7 +26,7 @@
     "url": "git://github.com/tiefenb/grunt-pistachio-compiler.git"
   },
   "dependencies": {
-    "pistachio": ">=0.1.9"
+    "pistachio": ">=0.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0"
@@ -39,6 +39,6 @@
   },
   "readme": "# grunt-pistachio-compiler\n\nA Grunt task to compile [pistachio](https://github.com/phidelta/pistachio) templates\n\nInstall this module on your project's [grunt.js gruntfile](https://github.com/cowboy/grunt/blob/master/docs/getting_started.md):\n```bash\n$ npm install grunt-pistachio-compiler\n```\n\nThen register the task by adding the following line to your `grunt.js` gruntfile:\n```javascript\ngrunt.loadNpmTasks('grunt-pistachio-compiler');\n```\n\nThen compile your pistachio templates calling:\n```javascript\ngrunt.initConfig({\n  'pistachio-compiler': {\n    src: [ '*.tpl' ]\n  }\n});\n```\n\n## License (MIT)\n\nCopyright (C) 2012 YOUSURE Tarifvergleich GmbH\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
   "readmeFilename": "Readme.md",
-  "_id": "grunt-pistachio-compiler@0.0.1",
+  "_id": "grunt-pistachio-compiler@0.0.3",
   "_from": "grunt-pistachio-compiler"
 }

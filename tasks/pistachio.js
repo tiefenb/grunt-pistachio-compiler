@@ -20,22 +20,9 @@ module.exports = function(grunt) {
     // TASKS
     // ==========================================================================
 
-  function parseFile(file, opts) {
-    var tpl, base = opts.file;
-    if (file[0]==='/') file = path.resolve(opts.root || '/', file.substr(1));
-    file = base ? path.resolve(path.dirname(base), file) : path.resolve(file);
-    try {
-      tpl = fs.readFileSync(file, 'utf-8');
-    } catch(ex) {
-      throw new Error('Could not open file: '+file);
-    }
-    opts.file = file;
-    tpl = pistachio.parse(tpl, opts);
-    opts.file = base;
-    return tpl;
-  }
-
   grunt.registerMultiTask('pistachio-compiler', 'Compile pistachio-template Files to .pistachio', function() {
+    var callback = this.async();
+
     var files = this.data.files.map(function(file, idx) {
       if (!file.src || !file.src.length) {
         return grunt.warn('Missing source property in file['+idx+']') && false;
@@ -48,17 +35,21 @@ module.exports = function(grunt) {
         target:path.resolve(file.dest)
       };
     });
-
-    files.forEach(function(file, cb) {
-      if (!file) return;
-      console.log('Compiling ', file.src, '=>', file.target);
-      try {
-        var input = grunt.file.read(file.src, { encoding:'utf-8' });
-        var fn = pistachio.compile(pistachio.parse(input, { partials:parseFile, file:file.src }));
-        grunt.file.write(file.target, fn, { encoding:'utf-8' });
-      } catch(ex) {
-        grunt.warn(ex.message);
+    async.forEach(files, function(file, callback) {
+      pistachio.load(file.src, undefined, {}, function(err, code) {
+        if (err) {
+          err.source = file.src;
+          err.target = file.target;
+          return callback(err);
+        }
+        grunt.file.write(file.target, code, { encoding:'utf-8' });
+        return callback();
+      });
+    }, function(err) {
+      if (err) {
+        grunt.warn('Error: '+err.source+' => '+err.target+'\n    '+err.message);
       }
+      callback(err);
     });
   });
 
