@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       });
     }, function(err) {
       if (err) {
-        grunt.warn('Error: '+err.source+' => '+err.target+'\n    '+err.message);
+        grunt.warn('Error: '+err.source+' => '+err.target+'\n    '+err.stack);
       }
       callback(err);
     });

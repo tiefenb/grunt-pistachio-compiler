@@ -1,6 +1,6 @@
 {
   "name": "grunt-pistachio-compiler",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Grunt task to compile pistachio templates",
   "keywords": [
     "gruntplugin",
